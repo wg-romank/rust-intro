@@ -82,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="history.html"><strong aria-hidden="true">1.</strong> History</a></li><li class="chapter-item expanded "><a href="projects.html"><strong aria-hidden="true">2.</strong> Projects</a></li><li class="chapter-item expanded "><a href="bullet-points.html"><strong aria-hidden="true">3.</strong> Bullet Points</a></li><li class="chapter-item expanded "><a href="ownership-and-borrowing.html"><strong aria-hidden="true">4.</strong> Ownership & Borrowing</a></li><li class="chapter-item expanded "><a href="mutation-or-aliasing.html"><strong aria-hidden="true">5.</strong> Mutation | Aliasing</a></li><li class="chapter-item expanded "><a href="adt.html"><strong aria-hidden="true">6.</strong> Algebraic Data Types</a></li><li class="chapter-item expanded "><a href="traits.html"><strong aria-hidden="true">7.</strong> Traits</a></li><li class="chapter-item expanded "><a href="polymorphism.html"><strong aria-hidden="true">8.</strong> Parameter polymorphism</a></li><li class="chapter-item expanded "><a href="features.html"><strong aria-hidden="true">9.</strong> Notable features</a></li><li class="chapter-item expanded "><a href="how-to-get-started.html"><strong aria-hidden="true">10.</strong> How to get started</a></li><li class="chapter-item expanded "><a href="stories.html"><strong aria-hidden="true">11.</strong> Stories</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="me.html"><strong aria-hidden="true">1.</strong> Me</a></li><li class="chapter-item expanded "><a href="history.html"><strong aria-hidden="true">2.</strong> History</a></li><li class="chapter-item expanded "><a href="bullet-points.html"><strong aria-hidden="true">3.</strong> Bullet Points</a></li><li class="chapter-item expanded "><a href="ownership-and-borrowing.html"><strong aria-hidden="true">4.</strong> Ownership & Borrowing</a></li><li class="chapter-item expanded "><a href="mutation-or-aliasing.html"><strong aria-hidden="true">5.</strong> Mutation | Aliasing</a></li><li class="chapter-item expanded "><a href="structs_impls.html"><strong aria-hidden="true">6.</strong> Structs & Impls</a></li><li class="chapter-item expanded "><a href="example_mutex.html"><strong aria-hidden="true">7.</strong> Example: Mutex</a></li><li class="chapter-item expanded "><a href="adt.html"><strong aria-hidden="true">8.</strong> Algebraic Data Types</a></li><li class="chapter-item expanded "><a href="traits.html"><strong aria-hidden="true">9.</strong> Traits</a></li><li class="chapter-item expanded "><a href="polymorphism.html"><strong aria-hidden="true">10.</strong> Parameter polymorphism</a></li><li class="chapter-item expanded "><a href="stm32.html"><strong aria-hidden="true">11.</strong> Demos: stm32</a></li><li class="chapter-item expanded "><a href="demo.html"><strong aria-hidden="true">12.</strong> Demos</a></li><li class="chapter-item expanded "><a href="features.html"><strong aria-hidden="true">13.</strong> Notable features</a></li><li class="chapter-item expanded "><a href="how-to-get-started.html"><strong aria-hidden="true">14.</strong> How to get started</a></li><li class="chapter-item expanded "><a href="projects.html"><strong aria-hidden="true">15.</strong> Projects</a></li><li class="chapter-item expanded "><a href="stories.html"><strong aria-hidden="true">16.</strong> Stories</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -143,27 +143,23 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="history"><a class="header" href="#history">History</a></h1>
+                        <h1 id="me"><a class="header" href="#me">Me</a></h1>
+<p>&lt;TODO: map&gt;</p>
+<p><strong>C, Python, Scala</strong></p>
+<p>Functional Programming, Computer Graphics</p>
+<p>Hobby: <strong>Rust, GLSL, J</strong>, Julia, OCaml</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="history"><a class="header" href="#history">History</a></h1>
 <p><strong>2010</strong> Pet project by Graydon Hoare at Mozilla Research</p>
 <p><strong>2015</strong> Hits 1.0</p>
 <p><strong>2016</strong> Firefox Quantum</p>
 <p><strong>2018</strong> Rust 👀 Me</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="projects"><a class="header" href="#projects">Projects</a></h1>
-<ul>
-<li>Desktop (<a href="https://github.com/servo/servo">Servo</a>, <a href="https://github.com/tauri-apps/tauri">Tauri Apps</a>)</li>
-<li>Embedded (<a href="https://github.com/rust-embedded/embedded-hal">HAL</a>, <a href="https://github.com/stm32-rs/stm32f1xx-hal">stm32</a>), <code>no_std</code></li>
-<li>Services, backend (<a href="https://tokio.rs/">Tokio</a>)</li>
-<li>Graphics/Games (<a href="bevyengine.org/">Bevy</a>, <a href="https://github.com/godot-rust/godot-rust">godot-rust</a>, <a href="https://embark.dev/">Embark Open-Source projects</a>)</li>
-<li>Frontend (WebAssembly) (<a href="seed-rs.org/">Seed</a>, <a href="https://yew.rs/">Yew</a>)</li>
-<li>Blockchain (<a href="https://github.com/solana-labs">Solana</a>)</li>
-</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="bullet-points"><a class="header" href="#bullet-points">Bullet points</a></h1>
 <ul>
 <li>Strong static typing</li>
 <li>Type inference</li>
 <li>No GC</li>
 <li>No exceptions</li>
-<li>No <code>null</code>'s</li>
+<li>No <code>null</code>'s *</li>
 </ul>
 <pre><pre class="playground"><code class="language-rust editable">fn main() {
   let a = vec![1, 2, 3, 4, 5];
@@ -214,29 +210,80 @@ fn main() {
   println!(&quot;{:?}&quot;, a);
 }
 </code></pre></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="algebraic-data-types"><a class="header" href="#algebraic-data-types">Algebraic Data Types</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="structs--impls"><a class="header" href="#structs--impls">Structs &amp; Impls</a></h1>
 <pre><pre class="playground"><code class="language-rust editable">struct Point {
   x: f32,
   y: f32,
-}
-
-enum Driver {
-  Offline,
-  Available { location: Point },
-  OnJob {
-    scheduled: usize,
-    pickup: Point,
-    dropoff: Point,
-    eta: u32
-  },
 }
 
 impl Point {
   fn distance(&amp;self, other: &amp;Point) -&gt; f32 {
     ((self.x - other.x).powf(2.) + (self.y - other.y).powf(2.)).sqrt()
   }
+
+  fn shift(&amp;mut self, x: f32, y: f32) {
+     self.x += x;
+     self.y += y;
+  }
+}
+
+fn main() {
+  let origin = Point { x: 0., y: 0. };
+  let mut p1 = Point { x: 0., y: 2. };
+  println!(&quot;distance {}&quot;, origin.distance(&amp;p1));
+  p1.shift(5., -2.);
+  println!(&quot;distance {}&quot;, origin.distance(&amp;p1));
 }
 </code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="example-mutex"><a class="header" href="#example-mutex">Example: Mutex</a></h1>
+<p>In imaginary game logic</p>
+<pre><code class="language-python">class Posion:
+  def onTick(self):
+    self.entity.health -= 1
+
+class Missile:
+  def onCollide(self, entity):
+    with entity.lock():
+      entity.health -= 1
+</code></pre>
+<p>In Rust <code>Mutex</code> <em>owns</em> its underlying data</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>struct Mutex&lt;T&gt; {
+  data: T,
+}
+<span class="boring">}
+</span></code></pre></pre>
+<p><strong>Source:</strong> RustConf 2021 Compile-Time Social Coordination <a href="https://www.youtube.com/watch?v=4_Jg-rLDy-Y">1</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="algebraic-data-types--pattern-matching"><a class="header" href="#algebraic-data-types--pattern-matching">Algebraic Data Types &amp; Pattern Matching</a></h1>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span><span class="boring">struct Point {
+</span><span class="boring">  x: f32,
+</span><span class="boring">  y: f32,
+</span><span class="boring">}
+</span><span class="boring">fn in_area(p: &amp;Point) -&gt; bool { false }
+</span>
+use std::time::Duration;
+
+enum Driver {
+  Offline,
+  Available { location: Point },
+  OnJob { pickup: Point, dropoff: Point, eta: Duration },
+}
+
+fn serve(driver: &amp;mut Driver) {
+  match driver {
+    Driver::Offline =&gt; todo!(&quot;...&quot;),
+    Driver::Available { location } if in_area(location) =&gt; todo!(&quot;...&quot;),
+    Driver::Available { location } =&gt; todo!(&quot;...&quot;),
+    Driver::OnJob { pickup, dropoff, eta } =&gt; todo!(&quot;...&quot;),
+  }
+}
+<span class="boring">}
+</span></code></pre></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="traits"><a class="header" href="#traits">Traits</a></h1>
 <ul>
 <li>No inheritance</li>
@@ -275,6 +322,23 @@ fn generic_fn_sugar(t: impl Display) -&gt; String {
   t.show()
 }
 </code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="demos-stm32"><a class="header" href="#demos-stm32">Demos: stm32</a></h1>
+<img src="./s-l3002.png"/>
+<img src="./gyro-demo.gif" style="float: right; margin-right: 10vw; height: 60vh;"/>
+<p>Blue Pill: <strong>stm32f103c8t6</strong></p>
+<ul>
+<li>ARM Cortex-M3</li>
+<li>32 bit, 1-core</li>
+<li>72 Mhz clock</li>
+<li>64 KB FLASH</li>
+<li>20 KB RAM</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="demos"><a class="header" href="#demos">Demos</a></h1>
+<div>
+ <iframe width="100%" src="https://wg-romank.github.io/wasm-game-of-life/"></iframe>
+<iframe src="https://wg-romank.github.io/sands-of-rust/"></iframe>
+<iframe src="https://wg-romank.github.io/planet-es/"></iframe>
+</div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="notable-features"><a class="header" href="#notable-features">Notable features</a></h1>
 <p>Most references from <a href="https://doc.rust-lang.org/stable/book/">The Rust Book</a></p>
 <ul>
@@ -296,6 +360,15 @@ fn generic_fn_sugar(t: impl Display) -&gt; String {
 <li><a href="https://discord.com/invite/rust-lang-community">Community server</a></li>
 <li><a href="https://this-week-in-rust.org/">This Week In Rust newsletter</a></li>
 <li><a href="https://gamedev.rs/news/">Gamedev newsletter</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="projects"><a class="header" href="#projects">Projects</a></h1>
+<ul>
+<li>Desktop (<a href="https://github.com/servo/servo">Servo</a>, <a href="https://github.com/tauri-apps/tauri">Tauri Apps</a>)</li>
+<li>Embedded (<a href="https://github.com/rust-embedded/embedded-hal">HAL</a>, <a href="https://github.com/stm32-rs/stm32f1xx-hal">stm32</a>), <code>no_std</code></li>
+<li>Services, backend (<a href="https://tokio.rs/">Tokio</a>)</li>
+<li>Graphics/Games (<a href="bevyengine.org/">Bevy</a>, <a href="https://github.com/godot-rust/godot-rust">godot-rust</a>, <a href="https://embark.dev/">Embark Open-Source projects</a>)</li>
+<li>Frontend (WebAssembly) (<a href="https://github.com/emilk/egui">EGUI</a>, <a href="seed-rs.org/">Seed</a>, <a href="https://yew.rs/">Yew</a>)</li>
+<li>Blockchain (<a href="https://github.com/solana-labs">Solana</a>)</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="stories"><a class="header" href="#stories">Stories</a></h1>
 <ul>
