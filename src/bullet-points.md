@@ -4,7 +4,7 @@
 * Type inference
 * No GC
 * No exceptions
-* No `null`'s
+* No `null`'s *
 
 ```rust,editable
 fn main() {

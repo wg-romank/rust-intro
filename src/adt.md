@@ -1,25 +1,26 @@
-# Algebraic Data Types
+# Algebraic Data Types & Pattern Matching
 
-```rust,editable
-struct Point {
-  x: f32,
-  y: f32,
-}
+```rust
+# struct Point {
+#   x: f32,
+#   y: f32,
+# }
+# fn in_area(p: &Point) -> bool { false }
+
+use std::time::Duration;
 
 enum Driver {
   Offline,
   Available { location: Point },
-  OnJob {
-    scheduled: usize,
-    pickup: Point,
-    dropoff: Point,
-    eta: u32
-  },
+  OnJob { pickup: Point, dropoff: Point, eta: Duration },
 }
 
-impl Point {
-  fn distance(&self, other: &Point) -> f32 {
-    ((self.x - other.x).powf(2.) + (self.y - other.y).powf(2.)).sqrt()
+fn serve(driver: &mut Driver) {
+  match driver {
+    Driver::Offline => todo!("..."),
+    Driver::Available { location } if in_area(location) => todo!("..."),
+    Driver::Available { location } => todo!("..."),
+    Driver::OnJob { pickup, dropoff, eta } => todo!("..."),
   }
 }
 ```
