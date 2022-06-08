@@ -16,9 +16,10 @@ class Missile:
 In Rust `Mutex` *owns* its underlying data
 
 ```rust
-struct Mutex<T> {
-  data: T,
-}
+# use std::sync::Mutex;
+# let entity: u32 = 0;
+let e = Mutex::new(entity);
+e.lock();
 ```
 
 **Source:** RustConf 2021 Compile-Time Social Coordination [1](https://www.youtube.com/watch?v=4_Jg-rLDy-Y)

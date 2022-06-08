@@ -1,8 +1,6 @@
-# Demos: stm32
+# stm32
 
 <img src="./s-l3002.png"/>
-
-<img src="./gyro-demo.gif" style="float: right; margin-right: 10vw; height: 60vh;"/>
 
 Blue Pill: **stm32f103c8t6**
 

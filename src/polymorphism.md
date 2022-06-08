@@ -1,15 +1,13 @@
 # Parameter polymorphism
 
+<TODO: make this slide better>
+
 ```rust,editable
-trait Display {
+trait Show {
   fn show(&self) -> String;
 }
 
-fn generic_fn<T: Display>(t: &T) -> String {
-  t.show()
-}
-
-fn generic_fn_sugar(t: impl Display) -> String {
+fn generic_fn<T: Show>(t: &T) -> String {
   t.show()
 }
 ```

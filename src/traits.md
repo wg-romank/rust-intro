@@ -9,11 +9,11 @@ struct Point {
   y: f32,
 }
 
-trait Display {
+trait Show {
   fn show(&self) -> String;
 }
 
-impl Display for Point {
+impl Show for Point {
   fn show(&self) -> String {
     format!("{};{}", self.x, self.y)
   }
