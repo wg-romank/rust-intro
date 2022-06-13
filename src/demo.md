@@ -1,11 +1,7 @@
-# Demos
+# Demos: WASM
 
-<TODO: demos>
+[Conway's Game of Life](https://wg-romank.github.io/wasm-game-of-life/)
 
-<!--<div>
- <iframe width="100%" src="https://wg-romank.github.io/wasm-game-of-life/"></iframe>
+[Simple Sandbox Simulation](https://wg-romank.github.io/sands-of-rust/)
 
- <iframe src="https://wg-romank.github.io/sands-of-rust/"></iframe>
-
- <iframe src="https://wg-romank.github.io/planet-es/"></iframe>
-</div>-->
+[Simplex Noise Procedural Generation](https://wg-romank.github.io/planet-es/)

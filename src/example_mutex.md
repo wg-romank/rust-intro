@@ -1,6 +1,6 @@
 # Example: Mutex
 
-In imaginary game logic
+In imaginary game engine
 
 ```python
 class Posion:

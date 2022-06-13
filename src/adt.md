@@ -1,9 +1,12 @@
 # Algebraic Data Types & Pattern Matching
 
+- product types as `struct`s
+- sum types as `enum`s
+
 ```rust
 # struct Point {
-#   x: f32,
-#   y: f32,
+#  x: f32,
+#  y: f32,
 # }
 # fn in_area(p: &Point) -> bool { false }
 

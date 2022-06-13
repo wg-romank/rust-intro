@@ -4,6 +4,6 @@
 
 **C, Python, Scala**
 
-Functional Programming, Computer Graphics
+Functional Programming, *Computer Graphics*
 
 Hobby: **Rust, GLSL, J**, Julia, OCaml

@@ -9,3 +9,4 @@ Blue Pill: **stm32f103c8t6**
 - 72 Mhz clock
 - 64 KB FLASH
 - 20 KB RAM
+

@@ -82,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="me.html"><strong aria-hidden="true">1.</strong> Me</a></li><li class="chapter-item expanded "><a href="history.html"><strong aria-hidden="true">2.</strong> History</a></li><li class="chapter-item expanded "><a href="bullet-points.html"><strong aria-hidden="true">3.</strong> Bullet Points</a></li><li class="chapter-item expanded "><a href="ownership-and-borrowing.html"><strong aria-hidden="true">4.</strong> Ownership & Borrowing</a></li><li class="chapter-item expanded "><a href="mutation-or-aliasing.html"><strong aria-hidden="true">5.</strong> Mutation | Aliasing</a></li><li class="chapter-item expanded "><a href="structs_impls.html"><strong aria-hidden="true">6.</strong> Structs & Impls</a></li><li class="chapter-item expanded "><a href="example_mutex.html"><strong aria-hidden="true">7.</strong> Example: Mutex</a></li><li class="chapter-item expanded "><a href="adt.html"><strong aria-hidden="true">8.</strong> Algebraic Data Types</a></li><li class="chapter-item expanded "><a href="traits.html"><strong aria-hidden="true">9.</strong> Traits</a></li><li class="chapter-item expanded "><a href="polymorphism.html"><strong aria-hidden="true">10.</strong> Parameter polymorphism</a></li><li class="chapter-item expanded "><a href="stm32.html"><strong aria-hidden="true">11.</strong> Demos: stm32</a></li><li class="chapter-item expanded "><a href="demo.html"><strong aria-hidden="true">12.</strong> Demos</a></li><li class="chapter-item expanded "><a href="features.html"><strong aria-hidden="true">13.</strong> Notable features</a></li><li class="chapter-item expanded "><a href="how-to-get-started.html"><strong aria-hidden="true">14.</strong> How to get started</a></li><li class="chapter-item expanded "><a href="projects.html"><strong aria-hidden="true">15.</strong> Projects</a></li><li class="chapter-item expanded "><a href="stories.html"><strong aria-hidden="true">16.</strong> Stories</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="me.html"><strong aria-hidden="true">1.</strong> Me</a></li><li class="chapter-item expanded "><a href="history.html"><strong aria-hidden="true">2.</strong> History</a></li><li class="chapter-item expanded "><a href="bullet-points.html"><strong aria-hidden="true">3.</strong> Bullet Points</a></li><li class="chapter-item expanded "><a href="ownership-and-borrowing.html"><strong aria-hidden="true">4.</strong> Ownership & Borrowing</a></li><li class="chapter-item expanded "><a href="mutation-or-aliasing.html"><strong aria-hidden="true">5.</strong> Mutation | Aliasing</a></li><li class="chapter-item expanded "><a href="structs_impls.html"><strong aria-hidden="true">6.</strong> Structs & Impls</a></li><li class="chapter-item expanded "><a href="traits.html"><strong aria-hidden="true">7.</strong> Traits</a></li><li class="chapter-item expanded "><a href="example_mutex.html"><strong aria-hidden="true">8.</strong> Example: Mutex</a></li><li class="chapter-item expanded "><a href="adt.html"><strong aria-hidden="true">9.</strong> Algebraic Data Types</a></li><li class="chapter-item expanded "><a href="manual-memory.html"><strong aria-hidden="true">10.</strong> Manual Memory</a></li><li class="chapter-item expanded "><a href="polymorphism.html"><strong aria-hidden="true">11.</strong> Parameter polymorphism</a></li><li class="chapter-item expanded "><a href="stm32.html"><strong aria-hidden="true">12.</strong> stm32</a></li><li class="chapter-item expanded "><a href="stm32-2.html"><strong aria-hidden="true">13.</strong> Demo: stm32</a></li><li class="chapter-item expanded "><a href="wasm.html"><strong aria-hidden="true">14.</strong> WebAssembly</a></li><li class="chapter-item expanded "><a href="demo.html"><strong aria-hidden="true">15.</strong> Demos: WASM</a></li><li class="chapter-item expanded "><a href="features.html"><strong aria-hidden="true">16.</strong> Notable features</a></li><li class="chapter-item expanded "><a href="how-to-get-started.html"><strong aria-hidden="true">17.</strong> How to get started</a></li><li class="chapter-item expanded "><a href="projects.html"><strong aria-hidden="true">18.</strong> Projects</a></li><li class="chapter-item expanded "><a href="stories.html"><strong aria-hidden="true">19.</strong> Stories</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -146,7 +146,7 @@
                         <h1 id="me"><a class="header" href="#me">Me</a></h1>
 <p>&lt;TODO: map&gt;</p>
 <p><strong>C, Python, Scala</strong></p>
-<p>Functional Programming, Computer Graphics</p>
+<p>Functional Programming, <em>Computer Graphics</em></p>
 <p>Hobby: <strong>Rust, GLSL, J</strong>, Julia, OCaml</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="history"><a class="header" href="#history">History</a></h1>
 <p><strong>2010</strong> Pet project by Graydon Hoare at Mozilla Research</p>
@@ -235,8 +235,33 @@ fn main() {
   println!(&quot;distance {}&quot;, origin.distance(&amp;p1));
 }
 </code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="traits"><a class="header" href="#traits">Traits</a></h1>
+<ul>
+<li>No inheritance</li>
+<li>Behavior described through traits</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust editable">struct Point {
+  x: f32,
+  y: f32,
+}
+
+trait Show {
+  fn show(&amp;self) -&gt; String;
+}
+
+impl Show for Point {
+  fn show(&amp;self) -&gt; String {
+    format!(&quot;{};{}&quot;, self.x, self.y)
+  }
+}
+
+fn main() {
+  let p = Point { x: 0.5, y: 1.3 };
+  println!(&quot;{}&quot;, p.show());
+}
+</code></pre></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="example-mutex"><a class="header" href="#example-mutex">Example: Mutex</a></h1>
-<p>In imaginary game logic</p>
+<p>In imaginary game engine</p>
 <pre><code class="language-python">class Posion:
   def onTick(self):
     self.entity.health -= 1
@@ -250,19 +275,24 @@ class Missile:
 <pre><pre class="playground"><code class="language-rust">
 <span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
-</span>struct Mutex&lt;T&gt; {
-  data: T,
-}
+</span><span class="boring">use std::sync::Mutex;
+</span><span class="boring">let entity: u32 = 0;
+</span>let e = Mutex::new(entity);
+e.lock();
 <span class="boring">}
 </span></code></pre></pre>
 <p><strong>Source:</strong> RustConf 2021 Compile-Time Social Coordination <a href="https://www.youtube.com/watch?v=4_Jg-rLDy-Y">1</a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="algebraic-data-types--pattern-matching"><a class="header" href="#algebraic-data-types--pattern-matching">Algebraic Data Types &amp; Pattern Matching</a></h1>
+<ul>
+<li>product types as <code>struct</code>s</li>
+<li>sum types as <code>enum</code>s</li>
+</ul>
 <pre><pre class="playground"><code class="language-rust">
 <span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span><span class="boring">struct Point {
-</span><span class="boring">  x: f32,
-</span><span class="boring">  y: f32,
+</span><span class="boring"> x: f32,
+</span><span class="boring"> y: f32,
 </span><span class="boring">}
 </span><span class="boring">fn in_area(p: &amp;Point) -&gt; bool { false }
 </span>
@@ -284,47 +314,58 @@ fn serve(driver: &amp;mut Driver) {
 }
 <span class="boring">}
 </span></code></pre></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="traits"><a class="header" href="#traits">Traits</a></h1>
-<ul>
-<li>No inheritance</li>
-<li>Behavior described through traits</li>
-</ul>
-<pre><pre class="playground"><code class="language-rust editable">struct Point {
-  x: f32,
-  y: f32,
+<div style="break-before: page; page-break-before: always;"></div><h1 id="manual-memory"><a class="header" href="#manual-memory">Manual Memory</a></h1>
+<p>Types needs to have known size</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>struct List&lt;T&gt; {
+  data: T,
+  next: Box&lt;List&lt;T&gt;&gt;  // Box is a heap pointer
 }
-
-trait Display {
+<span class="boring">}
+</span></code></pre></pre>
+<p>Need to use mutex for self-referential structs that require mutual mutation</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span><span class="boring">use std::sync::Mutex;
+</span>
+struct DoubleLinkedList&lt;T&gt; {
+  data: T,
+  next: Mutex&lt;Box&lt;DoubleLinkedList&lt;T&gt;&gt;&gt;,
+  previous: Mutex&lt;Box&lt;DoubleLinkedList&lt;T&gt;&gt;&gt;,
+}
+<span class="boring">}
+</span></code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="parameter-polymorphism"><a class="header" href="#parameter-polymorphism">Parameter polymorphism</a></h1>
+<p>Add guards to generic arguments to describe fine-grained behavior</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>trait Show {
   fn show(&amp;self) -&gt; String;
 }
 
-impl Display for Point {
+fn generic_fn&lt;T: Show&gt;(t: &amp;T) -&gt; String {
+  t.show()
+}
+
+struct List&lt;T&gt; {
+  data: T,
+  next: Box&lt;List&lt;T&gt;&gt;,
+}
+
+impl&lt;T: Show&gt; Show for List&lt;T&gt; {
   fn show(&amp;self) -&gt; String {
-    format!(&quot;{};{}&quot;, self.x, self.y)
+    format!(&quot;{} -&gt; {}&quot;, self.data.show(), self.next.show())
   }
 }
-
-fn main() {
-  let p = Point { x: 0.5, y: 1.3 };
-  println!(&quot;{}&quot;, p.show());
-}
-</code></pre></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="parameter-polymorphism"><a class="header" href="#parameter-polymorphism">Parameter polymorphism</a></h1>
-<pre><pre class="playground"><code class="language-rust editable">trait Display {
-  fn show(&amp;self) -&gt; String;
-}
-
-fn generic_fn&lt;T: Display&gt;(t: &amp;T) -&gt; String {
-  t.show()
-}
-
-fn generic_fn_sugar(t: impl Display) -&gt; String {
-  t.show()
-}
-</code></pre></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="demos-stm32"><a class="header" href="#demos-stm32">Demos: stm32</a></h1>
+<span class="boring">}
+</span></code></pre></pre>
+<p>See also chapter on trait objects <a href="https://doc.rust-lang.org/book/ch17-02-trait-objects.html">1</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="stm32"><a class="header" href="#stm32">stm32</a></h1>
 <img src="./s-l3002.png"/>
-<img src="./gyro-demo.gif" style="float: right; margin-right: 10vw; height: 60vh;"/>
 <p>Blue Pill: <strong>stm32f103c8t6</strong></p>
 <ul>
 <li>ARM Cortex-M3</li>
@@ -333,15 +374,37 @@ fn generic_fn_sugar(t: impl Display) -&gt; String {
 <li>64 KB FLASH</li>
 <li>20 KB RAM</li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="demos"><a class="header" href="#demos">Demos</a></h1>
-<p>&lt;TODO: demos&gt;</p>
-<!--<div>
- <iframe width="100%" src="https://wg-romank.github.io/wasm-game-of-life/"></iframe>
-
- <iframe src="https://wg-romank.github.io/sands-of-rust/"></iframe>
-
- <iframe src="https://wg-romank.github.io/planet-es/"></iframe>
-</div>-->
+<div style="break-before: page; page-break-before: always;"></div><h1 id="demos-stm32"><a class="header" href="#demos-stm32">Demos: stm32</a></h1>
+<img src="./gyro-demo.gif" style="float: right; margin-right: 10vw; height: 60vh;"/>
+<img src="./quad-stm2.svg" style="height: 40vh; margin-left: 7vw;" />
+<p>Libraries &amp; Tools</p>
+<ul>
+<li><a href="https://crates.io/crates/bluetooth-serial-port">bluetooth-serial-port</a></li>
+<li><a href="https://crates.io/crates/mpu6050">mpu6050</a></li>
+<li><a href="https://rtic.rs/">rtic</a></li>
+<li><a href="https://crates.io/crates/nalgebra">nalgebra</a> <code>no_std</code></li>
+<li><a href="https://godotengine.org/">Godot</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="webassembly"><a class="header" href="#webassembly">WebAssembly</a></h1>
+<img src="./WebAssembly_Logo.svg" style="height: 8vh;"/>
+<img src="./ff-logo.svg" style="height: 8vh;"/>
+<img src="./chromium-logo.svg" style="height: 8vh;"/>
+<img src="./safari-logo.svg" style="height: 8vh;"/>
+<ul>
+<li>Binary executable format &amp; VM</li>
+<li>Supported by all major browsers</li>
+<li>Linear memory</li>
+</ul>
+<p>Rust</p>
+<ul>
+<li><a href="https://crates.io/crates/web-sys">web-sys</a></li>
+<li><a href="https://crates.io/crates/wasm-bindgen">wasm-bindgen</a></li>
+<li><a href="https://crates.io/crates/js-sys">js-sys</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="demos-wasm"><a class="header" href="#demos-wasm">Demos: WASM</a></h1>
+<p><a href="https://wg-romank.github.io/wasm-game-of-life/">Conway's Game of Life</a></p>
+<p><a href="https://wg-romank.github.io/sands-of-rust/">Simple Sandbox Simulation</a></p>
+<p><a href="https://wg-romank.github.io/planet-es/">Simplex Noise Procedural Generation</a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="notable-features"><a class="header" href="#notable-features">Notable features</a></h1>
 <p>Most references from <a href="https://doc.rust-lang.org/stable/book/">The Rust Book</a></p>
 <ul>
@@ -380,13 +443,6 @@ fn generic_fn_sugar(t: impl Display) -&gt; String {
 <li>Google Security: Android Kernel <a href="https://security.googleblog.com/2021/04/rust-in-linux-kernel.html">1</a></li>
 <li>Dropbox Capture <a href="https://dropbox.tech/application/why-we-built-a-custom-rust-library-for-capture">1</a></li>
 <li>Linux Kernel patches to make Rust availiable for contribution <a href="https://lore.kernel.org/lkml/20220212130410.6901-1-ojeda@kernel.org/">1</a></li>
-<li>FAANG
-<ul>
-<li>Facebook <a href="https://developers.facebook.com/blog/post/2021/04/29/facebook-joins-rust-foundation/">1</a></li>
-<li>Google <a href="https://opensource.googleblog.com/">1</a></li>
-<li>Amazon <a href="https://aws.amazon.com/blogs/opensource/why-aws-loves-rust-and-how-wed-like-to-help/">1</a></li>
-</ul>
-</li>
 </ul>
 
                     </main>
