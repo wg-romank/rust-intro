@@ -1,6 +1,6 @@
 # Bullet points
 
-* Strong static typing
+* Strong static typing [1](https://en.wikipedia.org/wiki/Strong_and_weak_typing)
 * Type inference
 * No GC
 * No exceptions
