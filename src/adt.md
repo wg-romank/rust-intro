@@ -1,29 +1,24 @@
 # Algebraic Data Types & Pattern Matching
 
-- product types as `struct`s
-- sum types as `enum`s
+- product types as `struct`s [1](https://en.wikipedia.org/wiki/Product_type)
+- sum types as `enum`s [1](https://en.wikipedia.org/wiki/Tagged_union)
 
-```rust
-# struct Point {
-#  x: f32,
-#  y: f32,
-# }
-# fn in_area(p: &Point) -> bool { false }
-
-use std::time::Duration;
-
-enum Driver {
-  Offline,
-  Available { location: Point },
-  OnJob { pickup: Point, dropoff: Point, eta: Duration },
+```rust,editable
+enum Option<T> {
+  None,
+  Some(T),
 }
 
-fn serve(driver: &mut Driver) {
-  match driver {
-    Driver::Offline => todo!("..."),
-    Driver::Available { location } if in_area(location) => todo!("..."),
-    Driver::Available { location } => todo!("..."),
-    Driver::OnJob { pickup, dropoff, eta } => todo!("..."),
+fn test(values: Option<&Vec<u32>>) {
+  match values {
+    Option::None => todo!("no values"),
+    Option::Some(v) if v.len() > 3 => todo!("more than 3"),
+    Option::Some(v) => todo!("{:?}", v),
   }
+}
+
+fn main() {
+  let v = vec![1, 2, 3, 4];
+  test(Option::Some(&v));
 }
 ```

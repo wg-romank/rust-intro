@@ -10,6 +10,7 @@
 - [Example: Mutex](./example_mutex.md)
 - [Algebraic Data Types](./adt.md)
 - [Manual Memory](./manual-memory.md)
+- [Manual Memory](./manual-memory2.md)
 - [Parameter polymorphism](./polymorphism.md)
 - [stm32](./stm32.md)
 - [Demo: stm32](./stm32-2.md)

@@ -5,18 +5,12 @@ Types needs to have known size
 ```rust
 struct List<T> {
   data: T,
-  next: Box<List<T>>  // Box is a heap pointer
+  next: Box<List<T>>,
 }
 ```
 
-Need to use mutex for self-referential structs that require mutual mutation
+* Box is a heap pointer
+* Box pointer is never `null`
+* Box pointer gets deallocated when the handle goes out of scope
 
-```rust
-# use std::sync::Mutex;
-
-struct DoubleLinkedList<T> {
-  data: T,
-  next: Mutex<Box<DoubleLinkedList<T>>>,
-  previous: Mutex<Box<DoubleLinkedList<T>>>,
-}
-```
+Other kinds of managed pointers [1](https://doc.rust-lang.org/stable/book/ch15-00-smart-pointers.html)

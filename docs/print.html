@@ -82,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="me.html"><strong aria-hidden="true">1.</strong> Me</a></li><li class="chapter-item expanded "><a href="history.html"><strong aria-hidden="true">2.</strong> History</a></li><li class="chapter-item expanded "><a href="bullet-points.html"><strong aria-hidden="true">3.</strong> Bullet Points</a></li><li class="chapter-item expanded "><a href="ownership-and-borrowing.html"><strong aria-hidden="true">4.</strong> Ownership & Borrowing</a></li><li class="chapter-item expanded "><a href="mutation-or-aliasing.html"><strong aria-hidden="true">5.</strong> Mutation | Aliasing</a></li><li class="chapter-item expanded "><a href="structs_impls.html"><strong aria-hidden="true">6.</strong> Structs & Impls</a></li><li class="chapter-item expanded "><a href="traits.html"><strong aria-hidden="true">7.</strong> Traits</a></li><li class="chapter-item expanded "><a href="example_mutex.html"><strong aria-hidden="true">8.</strong> Example: Mutex</a></li><li class="chapter-item expanded "><a href="adt.html"><strong aria-hidden="true">9.</strong> Algebraic Data Types</a></li><li class="chapter-item expanded "><a href="manual-memory.html"><strong aria-hidden="true">10.</strong> Manual Memory</a></li><li class="chapter-item expanded "><a href="polymorphism.html"><strong aria-hidden="true">11.</strong> Parameter polymorphism</a></li><li class="chapter-item expanded "><a href="stm32.html"><strong aria-hidden="true">12.</strong> stm32</a></li><li class="chapter-item expanded "><a href="stm32-2.html"><strong aria-hidden="true">13.</strong> Demo: stm32</a></li><li class="chapter-item expanded "><a href="wasm.html"><strong aria-hidden="true">14.</strong> WebAssembly</a></li><li class="chapter-item expanded "><a href="demo.html"><strong aria-hidden="true">15.</strong> Demos: WASM</a></li><li class="chapter-item expanded "><a href="features.html"><strong aria-hidden="true">16.</strong> Notable features</a></li><li class="chapter-item expanded "><a href="how-to-get-started.html"><strong aria-hidden="true">17.</strong> How to get started</a></li><li class="chapter-item expanded "><a href="projects.html"><strong aria-hidden="true">18.</strong> Projects</a></li><li class="chapter-item expanded "><a href="stories.html"><strong aria-hidden="true">19.</strong> Stories</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="me.html"><strong aria-hidden="true">1.</strong> Me</a></li><li class="chapter-item expanded "><a href="history.html"><strong aria-hidden="true">2.</strong> History</a></li><li class="chapter-item expanded "><a href="bullet-points.html"><strong aria-hidden="true">3.</strong> Bullet Points</a></li><li class="chapter-item expanded "><a href="ownership-and-borrowing.html"><strong aria-hidden="true">4.</strong> Ownership & Borrowing</a></li><li class="chapter-item expanded "><a href="mutation-or-aliasing.html"><strong aria-hidden="true">5.</strong> Mutation | Aliasing</a></li><li class="chapter-item expanded "><a href="structs_impls.html"><strong aria-hidden="true">6.</strong> Structs & Impls</a></li><li class="chapter-item expanded "><a href="traits.html"><strong aria-hidden="true">7.</strong> Traits</a></li><li class="chapter-item expanded "><a href="example_mutex.html"><strong aria-hidden="true">8.</strong> Example: Mutex</a></li><li class="chapter-item expanded "><a href="adt.html"><strong aria-hidden="true">9.</strong> Algebraic Data Types</a></li><li class="chapter-item expanded "><a href="manual-memory.html"><strong aria-hidden="true">10.</strong> Manual Memory</a></li><li class="chapter-item expanded "><a href="manual-memory2.html"><strong aria-hidden="true">11.</strong> Manual Memory</a></li><li class="chapter-item expanded "><a href="polymorphism.html"><strong aria-hidden="true">12.</strong> Parameter polymorphism</a></li><li class="chapter-item expanded "><a href="stm32.html"><strong aria-hidden="true">13.</strong> stm32</a></li><li class="chapter-item expanded "><a href="stm32-2.html"><strong aria-hidden="true">14.</strong> Demo: stm32</a></li><li class="chapter-item expanded "><a href="wasm.html"><strong aria-hidden="true">15.</strong> WebAssembly</a></li><li class="chapter-item expanded "><a href="demo.html"><strong aria-hidden="true">16.</strong> Demos: WASM</a></li><li class="chapter-item expanded "><a href="features.html"><strong aria-hidden="true">17.</strong> Notable features</a></li><li class="chapter-item expanded "><a href="how-to-get-started.html"><strong aria-hidden="true">18.</strong> How to get started</a></li><li class="chapter-item expanded "><a href="projects.html"><strong aria-hidden="true">19.</strong> Projects</a></li><li class="chapter-item expanded "><a href="stories.html"><strong aria-hidden="true">20.</strong> Stories</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -144,7 +144,6 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="me"><a class="header" href="#me">Me</a></h1>
-<p>&lt;TODO: map&gt;</p>
 <p><strong>C, Python, Scala</strong></p>
 <p>Functional Programming, <em>Computer Graphics</em></p>
 <p>Hobby: <strong>Rust, GLSL, J</strong>, Julia, OCaml</p>
@@ -284,36 +283,27 @@ e.lock();
 <p><strong>Source:</strong> RustConf 2021 Compile-Time Social Coordination <a href="https://www.youtube.com/watch?v=4_Jg-rLDy-Y">1</a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="algebraic-data-types--pattern-matching"><a class="header" href="#algebraic-data-types--pattern-matching">Algebraic Data Types &amp; Pattern Matching</a></h1>
 <ul>
-<li>product types as <code>struct</code>s</li>
-<li>sum types as <code>enum</code>s</li>
+<li>product types as <code>struct</code>s <a href="https://en.wikipedia.org/wiki/Product_type">1</a></li>
+<li>sum types as <code>enum</code>s <a href="https://en.wikipedia.org/wiki/Tagged_union">1</a></li>
 </ul>
-<pre><pre class="playground"><code class="language-rust">
-<span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
-</span><span class="boring">struct Point {
-</span><span class="boring"> x: f32,
-</span><span class="boring"> y: f32,
-</span><span class="boring">}
-</span><span class="boring">fn in_area(p: &amp;Point) -&gt; bool { false }
-</span>
-use std::time::Duration;
-
-enum Driver {
-  Offline,
-  Available { location: Point },
-  OnJob { pickup: Point, dropoff: Point, eta: Duration },
+<pre><pre class="playground"><code class="language-rust editable">enum Option&lt;T&gt; {
+  None,
+  Some(T),
 }
 
-fn serve(driver: &amp;mut Driver) {
-  match driver {
-    Driver::Offline =&gt; todo!(&quot;...&quot;),
-    Driver::Available { location } if in_area(location) =&gt; todo!(&quot;...&quot;),
-    Driver::Available { location } =&gt; todo!(&quot;...&quot;),
-    Driver::OnJob { pickup, dropoff, eta } =&gt; todo!(&quot;...&quot;),
+fn test(values: Option&lt;&amp;Vec&lt;u32&gt;&gt;) {
+  match values {
+    Option::None =&gt; todo!(&quot;no values&quot;),
+    Option::Some(v) if v.len() &gt; 3 =&gt; todo!(&quot;more than 3&quot;),
+    Option::Some(v) =&gt; todo!(&quot;{:?}&quot;, v),
   }
 }
-<span class="boring">}
-</span></code></pre></pre>
+
+fn main() {
+  let v = vec![1, 2, 3, 4];
+  test(Option::Some(&amp;v));
+}
+</code></pre></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="manual-memory"><a class="header" href="#manual-memory">Manual Memory</a></h1>
 <p>Types needs to have known size</p>
 <pre><pre class="playground"><code class="language-rust">
@@ -321,49 +311,70 @@ fn serve(driver: &amp;mut Driver) {
 </span><span class="boring">fn main() {
 </span>struct List&lt;T&gt; {
   data: T,
-  next: Box&lt;List&lt;T&gt;&gt;  // Box is a heap pointer
+  next: Box&lt;List&lt;T&gt;&gt;,
 }
 <span class="boring">}
 </span></code></pre></pre>
-<p>Need to use mutex for self-referential structs that require mutual mutation</p>
+<ul>
+<li>Box is a heap pointer</li>
+<li>Box pointer is never <code>null</code></li>
+<li>Box pointer gets deallocated when the handle goes out of scope</li>
+</ul>
+<p>Other kinds of managed pointers <a href="https://doc.rust-lang.org/stable/book/ch15-00-smart-pointers.html">1</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="manual-memory-1"><a class="header" href="#manual-memory-1">Manual Memory</a></h1>
 <pre><pre class="playground"><code class="language-rust">
 <span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
-</span><span class="boring">use std::sync::Mutex;
+</span>struct List&lt;T&gt; {
+  data: T,
+  next: Option&lt;Box&lt;List&lt;T&gt;&gt;&gt;,
+}
+<span class="boring">}
+</span></code></pre></pre>
+<p>It gets worse</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span><span class="boring">use std::rc::Rc;
 </span>
 struct DoubleLinkedList&lt;T&gt; {
   data: T,
-  next: Mutex&lt;Box&lt;DoubleLinkedList&lt;T&gt;&gt;&gt;,
-  previous: Mutex&lt;Box&lt;DoubleLinkedList&lt;T&gt;&gt;&gt;,
+  next: Option&lt;Rc&lt;DoubleLinkedList&lt;T&gt;&gt;&gt;, // Rc is reference counting type
+  previous: Option&lt;Rc&lt;DoubleLinkedList&lt;T&gt;&gt;&gt;,
 }
 <span class="boring">}
 </span></code></pre></pre>
+<p>Too Many Lists <a href="https://rust-unofficial.github.io/too-many-lists/index.html">1</a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="parameter-polymorphism"><a class="header" href="#parameter-polymorphism">Parameter polymorphism</a></h1>
 <p>Add guards to generic arguments to describe fine-grained behavior</p>
-<pre><pre class="playground"><code class="language-rust">
-<span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
-</span>trait Show {
+<pre><pre class="playground"><code class="language-rust editable">trait Show {
   fn show(&amp;self) -&gt; String;
 }
 
-fn generic_fn&lt;T: Show&gt;(t: &amp;T) -&gt; String {
-  t.show()
-}
-
-struct List&lt;T&gt; {
-  data: T,
-  next: Box&lt;List&lt;T&gt;&gt;,
+enum List&lt;T&gt; {
+  Nil,
+  Cons(T, Box&lt;List&lt;T&gt;&gt;),
 }
 
 impl&lt;T: Show&gt; Show for List&lt;T&gt; {
   fn show(&amp;self) -&gt; String {
-    format!(&quot;{} -&gt; {}&quot;, self.data.show(), self.next.show())
+    match self {
+      List::Nil =&gt; &quot;Nil&quot;.to_string(),
+      List::Cons(t, l) =&gt; format!(&quot;{} -&gt; {}&quot;, t.show(), l.show())
+    }
   }
 }
-<span class="boring">}
-</span></code></pre></pre>
-<p>See also chapter on trait objects <a href="https://doc.rust-lang.org/book/ch17-02-trait-objects.html">1</a></p>
+
+impl&lt;T: ToString&gt; Show for T {
+  fn show(&amp;self) -&gt; String { self.to_string() }
+}
+
+fn main() {
+  let l = List::Cons(10, Box::new(List::Cons(5, Box::new(List::Nil))));
+  println!(&quot;{}&quot;, l.show());
+}
+</code></pre></pre>
+<p>For dynamic dispatch see also chapter on trait objects <a href="https://doc.rust-lang.org/book/ch17-02-trait-objects.html">1</a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="stm32"><a class="header" href="#stm32">stm32</a></h1>
 <img src="./s-l3002.png"/>
 <p>Blue Pill: <strong>stm32f103c8t6</strong></p>
@@ -430,7 +441,7 @@ impl&lt;T: Show&gt; Show for List&lt;T&gt; {
 <div style="break-before: page; page-break-before: always;"></div><h1 id="projects"><a class="header" href="#projects">Projects</a></h1>
 <ul>
 <li>Desktop (<a href="https://github.com/servo/servo">Servo</a>, <a href="https://github.com/tauri-apps/tauri">Tauri Apps</a>)</li>
-<li>Embedded (<a href="https://github.com/rust-embedded/embedded-hal">HAL</a>, <a href="https://github.com/stm32-rs/stm32f1xx-hal">stm32</a>), <code>no_std</code></li>
+<li>Embedded (<a href="https://github.com/rust-embedded/embedded-hal">HAL</a>, <a href="https://github.com/stm32-rs/stm32f1xx-hal">stm32</a>), <code>no_std</code> <a href="https://crates.io/categories/no-std">1</a></li>
 <li>Services, backend (<a href="https://tokio.rs/">Tokio</a>)</li>
 <li>Graphics/Games (<a href="bevyengine.org/">Bevy</a>, <a href="https://github.com/godot-rust/godot-rust">godot-rust</a>, <a href="https://embark.dev/">Embark Open-Source projects</a>)</li>
 <li>Frontend (WebAssembly) (<a href="https://github.com/emilk/egui">EGUI</a>, <a href="seed-rs.org/">Seed</a>, <a href="https://yew.rs/">Yew</a>)</li>

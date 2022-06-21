@@ -2,25 +2,33 @@
 
 Add guards to generic arguments to describe fine-grained behavior
 
-```rust
+```rust,editable
 trait Show {
   fn show(&self) -> String;
 }
 
-fn generic_fn<T: Show>(t: &T) -> String {
-  t.show()
-}
-
-struct List<T> {
-  data: T,
-  next: Box<List<T>>,
+enum List<T> {
+  Nil,
+  Cons(T, Box<List<T>>),
 }
 
 impl<T: Show> Show for List<T> {
   fn show(&self) -> String {
-    format!("{} -> {}", self.data.show(), self.next.show())
+    match self {
+      List::Nil => "Nil".to_string(),
+      List::Cons(t, l) => format!("{} -> {}", t.show(), l.show())
+    }
   }
+}
+
+impl<T: ToString> Show for T {
+  fn show(&self) -> String { self.to_string() }
+}
+
+fn main() {
+  let l = List::Cons(10, Box::new(List::Cons(5, Box::new(List::Nil))));
+  println!("{}", l.show());
 }
 ```
 
-See also chapter on trait objects [1](https://doc.rust-lang.org/book/ch17-02-trait-objects.html)
+For dynamic dispatch see also chapter on trait objects [1](https://doc.rust-lang.org/book/ch17-02-trait-objects.html)
