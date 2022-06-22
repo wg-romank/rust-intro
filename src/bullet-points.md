@@ -5,6 +5,7 @@
 * No GC
 * No exceptions
 * No `null`'s *
+* Memory safety *
 
 ```rust,editable
 fn main() {

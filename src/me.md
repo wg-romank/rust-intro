@@ -1,5 +1,7 @@
 # Me
 
+<img src="./in.jpg" style="float: right; height: 40vh;"/>
+
 NN ➡️  Helsinki ➡️  Singapore ➡️  Tokyo
 
 Social: [Github](https://github.com/wg-romank/), [Twitter](twitter.com/lidialiker/)

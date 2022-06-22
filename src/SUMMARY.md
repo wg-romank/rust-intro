@@ -20,3 +20,4 @@
 - [How to get started](./how-to-get-started.md)
 - [Projects](./projects.md)
 - [Stories](./stories.md)
+- [Thank you](./thankyou.md)
