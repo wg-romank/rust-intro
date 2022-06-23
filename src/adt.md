@@ -9,16 +9,19 @@ enum Option<T> {
   Some(T),
 }
 
-fn test(values: Option<&Vec<u32>>) {
+fn test(values: Option<&Vec<u32>>) -> String {
   match values {
-    Option::None => todo!("no values"),
-    Option::Some(v) if v.len() > 3 => todo!("more than 3"),
-    Option::Some(v) => todo!("{:?}", v),
+    Option::None =>
+      "none".to_string(),
+    Option::Some(v) if v.len() > 3 =>
+      "3+".to_string(),
+    Option::Some(v) =>
+      v.len().to_string(),
   }
 }
 
 fn main() {
   let v = vec![1, 2, 3, 4];
-  test(Option::Some(&v));
+  println!("{}", test(Option::Some(&v)));
 }
 ```

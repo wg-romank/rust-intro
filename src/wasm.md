@@ -8,7 +8,7 @@
 
 <img src="./safari-logo.svg" style="height: 8vh;"/>
 
-- Binary executable format & VM
+- Binary executable format
 - Supported by all major browsers
 - Linear memory
 
