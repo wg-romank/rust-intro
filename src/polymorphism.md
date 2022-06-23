@@ -21,7 +21,7 @@ impl<T: Show> Show for List<T> {
   }
 }
 
-impl<T: ToString> Show for T {
+impl Show for u32 {
   fn show(&self) -> String { self.to_string() }
 }
 

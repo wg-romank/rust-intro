@@ -372,7 +372,7 @@ impl&lt;T: Show&gt; Show for List&lt;T&gt; {
   }
 }
 
-impl&lt;T: ToString&gt; Show for T {
+impl Show for u32 {
   fn show(&amp;self) -&gt; String { self.to_string() }
 }
 
