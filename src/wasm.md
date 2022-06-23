@@ -2,11 +2,11 @@
 
 <img src="./WebAssembly_Logo.svg" style="height: 8vh;"/>
 
-<img src="./ff-logo.svg" style="height: 8vh;"/>
+<img src="./ff-logo.png" style="height: 8vh;"/>
 
-<img src="./chromium-logo.svg" style="height: 8vh;"/>
+<img src="./chromium-logo.png" style="height: 8vh;"/>
 
-<img src="./safari-logo.svg" style="height: 8vh;"/>
+<img src="./safari-logo.png" style="height: 8vh;"/>
 
 - Binary executable format
 - Supported by all major browsers
