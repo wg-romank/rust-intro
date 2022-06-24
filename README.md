@@ -1,10 +1,11 @@
-# Intro to Rust Programming Language
+# Intro to Rust
 
-Accompanying slides for the talk I gave on Rust
+Accompanying slides for the talk I gave on Rust Programming Language
 
-# To build & run locally
+## To build & run locally
 
-Make sure you have `mbdook` installed or run `cargo install mdbook`
+Make sure you have `mdbook` installed or run `cargo install mdbook`
+
 To get `cargo` follow https://rustup.rs/
 
 Then to start local sever run following
